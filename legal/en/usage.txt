@@ -1,0 +1,37 @@
+LumiPilot Usage and Safety Notice
+Document version: 2026-10-29.1
+Rights holder display name: LumiPilot
+Public contact: lumipilothelp@gmail.com
+Effective: from the date the release containing this document version is published. Operator: an individual developer (display name LumiPilot). This notice is not legal advice.
+
+LumiPilot is a coding agent that uses generative AI. AI responses, code and tool execution plans may contain errors and omissions. Do not rely on them as the sole basis for important decisions; review changes and test them in a copy or a test environment.
+Responses, generated images and synthesized voices must be distinguished from results written, photographed or recorded directly by a person. The app's Lumi character, app icon and some on-screen icons also use visual assets made with AI.
+
+1. Scope of execution and costs
+Depending on the features you use, files may be created, modified or deleted, shell commands and child processes may run, screens, web pages, mail and connected data may be read, and data may be uploaded or sent externally. Even though the app is free, external AI subscriptions, APIs and integrations may incur costs. The app's token and budget displays do not guarantee the actual billing limits of external providers.
+External services must be used only with the authentication methods and within the scope of use permitted by each provider. The fact that a login or request technically succeeds does not mean the provider permits that use. Your consent alone does not change a provider's terms or the rights of third parties.
+
+2. Permission modes
+Normal runs tools or asks for approval according to rules and risk levels. It is not a mode that confirms every call each time.
+AcceptEdits skips confirmation for file edits, except for explicit ask and deny rules and similar. Other tools follow their own rules and risk levels.
+Bypass skips confirmation except for explicit deny rules, scope denials and similar. It is not a mode in which destructive commands or injection-risk findings always force re-approval.
+A session's "Always allow" may be reused for a tool or a target scope, and differs from a one-time approval of identical arguments. Check the target, content and allowed scope on the approval screen, and choose automatic execution only in a test environment you trust.
+
+3. Limits of isolation
+Choosing a working folder, the approval dialog and shell string checks are not the same as an OS sandbox. Do not treat shell execution on Windows or Android as isolated execution that cannot access files outside the working folder or the network. Data accessible to your user account, the app's permissions and the process environment may be exposed to a task. Do not run the app as administrator, and keep important data and credentials separate from the test environment.
+
+4. Backups, checkpoints and undo
+App checkpoints cover originals recorded on supported file-editing paths. They do not record or restore all changes made by the shell, external programs, databases, mail or remote servers.
+Originals larger than 4MiB per file are not recorded. When a session's snapshots exceed 64MiB, the oldest turns are pruned first, and restoring to a pruned turn reports those files as not restorable. If the originals of a single edit alone still exceed 64MiB after pruning, that edit is not carried out. Recording failures or pruning may leave files that cannot be restored.
+Restoring may overwrite current files or delete newly created files. Do not assume that changes made outside the app are protected automatically; make a separate backup and review changes before restoring. Checkpoints do not replace independent backups.
+
+5. Stop and deny
+Deny and cancel are features for preventing further execution. They do not undo file changes, commands, external sends, API requests or costs that have already completed. Requesting a stop is different from every child process and remote task having ended. Check the termination result.
+
+6. External content and personal information
+Repository instructions, web pages, mail and tool results may contain malicious instructions. Check the purpose and target of any request to read secrets, expand permissions or send data externally. Conversations, attachments, screens and tool results may be sent to the model and external services you choose. Check the data handling notice and each provider's retention, training and pricing policies.
+
+7. Terms of provision and problem reports
+The app is provided as it is at the time of provision. To the extent permitted by law, no warranty is given for accuracy, error-free or uninterrupted operation, or fitness for a particular purpose. Liability follows each party's fault and applicable law, and this does not limit liability that cannot be excluded, such as for intent or gross negligence, or statutory rights. Governing law and jurisdiction follow section 9 of the App license.
+Send inquiries and problem reports to lumipilothelp@gmail.com. Start a report with the version, time, permission mode, symptom and steps to reproduce. Do not disclose API keys, certificates, passwords, full conversations or entire repositories without authorization. No response deadline is promised.
+Notice of the app's terms of use, publication of a privacy policy and any legally required consent to personal data processing are separate procedures. Reading this notice or approving a tool execution is not treated as blanket consent to all personal data processing.

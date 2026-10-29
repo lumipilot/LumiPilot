@@ -1,0 +1,35 @@
+LumiPilot Free Binary License
+Document version: 2026-10-29.1
+Rights holder display name: LumiPilot
+Public contact: lumipilothelp@gmail.com
+Effective: from the date the release containing this document version is published. Operator: an individual developer (display name LumiPilot). Rights ownership is based on the rights holder's statement and the repository records and has not been independently verified by a third party.
+
+1. Scope
+This applies to LumiPilot's own parts for which the rights holder holds the right to grant a license. Third-party libraries, fonts and content, material you bring in, and external services are subject to their own terms. This document does not claim exclusive rights to all included code and images.
+
+2. Permitted use
+Individuals, companies and organizations may install and run the official distribution binaries free of charge for work and non-work purposes. Copying needed for use and backup within yourself or your organization is permitted. The app fee is separate from the costs of external AI subscriptions, APIs and integration services.
+
+3. Acts that require separate permission
+Except where applicable law permits it or a third-party license guarantees it, modifying the app itself, redistributing, reselling or sublicensing it externally, or including it in another product requires separate permission from the rights holder. Point other users to the official distribution page instead of passing on the installation files. This section does not prohibit commercial use of code and documents you create with the app. Generated results may be separately subject to the terms of external services and the rights of third parties.
+This section does not uniformly prohibit statutory uses such as reverse engineering of program code for interoperability that meets legal requirements, or archival copying by a lawful user. The specific requirements and scope follow applicable law.
+
+4. Rights and earlier licenses
+No obligation to provide source code and no right to use trademarks or logos are granted. Rights in the app's own parts that are not separately licensed remain with their holders. These terms apply only to distributions to which they can lawfully be applied, and do not retroactively revoke rights already lawfully granted, such as under the Unlicense.
+
+5. Third-party components
+Third-party notices can be found in Settings > General > About > Open source licenses. This document does not limit the rights to copy, modify and redistribute under third-party licenses. Third-party copyright notices, licenses and exceptions are preserved.
+
+6. Warranty, liability and support
+The app is provided as it is at the time of provision. To the extent permitted by law, no warranty is given for the accuracy of results, error-free or uninterrupted operation, or fitness for a particular purpose. For AI and tool errors and execution risks, see the usage and safety notice. The liability of the developer and users follows each party's fault and applicable law. This does not limit liability that cannot be excluded, such as for intent or gross negligence, or users' statutory rights. Being free does not mean that there is never liability for damages or that the limit of damages is zero. No response deadline for support or permanent maintenance is promised.
+
+7. Name and contact
+The rights holder display name is LumiPilot, and license inquiries are received at lumipilothelp@gmail.com. The display name LumiPilot alone does not confirm the establishment of a company, trademark registration, or copyright ownership of all components.
+
+8. Visual assets made with AI
+The Lumi character images were generated without any reference image, from the creator's text requests (prompts), with an image generation model (Black Forest Labs FLUX.2 [klein] 4B, via Cloudflare Workers AI) and then had their backgrounds removed, masked and resized. According to the creator, the app icon was generated with ChatGPT and DALL·E and then technically processed, and some on-screen icons (SVG) were also made with AI. Such technical processing alone does not confirm exclusive copyright in each entire image or that it can be registered for copyright.
+The right to use outputs under a generation service's or model's terms is separate from whether copyright exists. The rights in input material and whether third-party rights are infringed must also be checked separately. The rights in the app code, creative selection and arrangement, and third-party components are also distinguished. This notice does not create new exclusive rights in parts where copyright does not exist, nor does it remove the rights of others.
+
+9. Age requirements and governing law
+Age requirements follow the terms of the external AI providers the app connects to.
+This license and the app's notices are governed by the laws of the Republic of Korea, and disputes are handled by the court with jurisdiction under the Korean Civil Procedure Act. This section does not exclude mandatory consumer protection rules guaranteed by the laws of the country where the user resides.
