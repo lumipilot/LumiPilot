@@ -8,7 +8,7 @@
 
 LumiPilot is a Windows desktop AI assistant for coding and everyday tasks. Choose an AI provider and a working folder to read and edit files, run commands, and explore the web. You control when tools need approval.
 
-> This repository distributes the Windows app. The app's source code is not published here.
+> This repository distributes the Windows app and an early beta Android APK. The app's source code is not published here.
 
 ## Screenshots
 
@@ -61,6 +61,28 @@ If the release is not code-signed, Windows SmartScreen may show a warning on fir
 
 Optional — live Visual Studio debugging: close Visual Studio, run `extras\LumiPilotDebugBridge.vsix` from the extracted folder (Visual Studio 2022 or 2026), then restart Visual Studio. The extension is not signed, so the VSIX installer may warn about it. Crash-dump analysis works without it.
 
+## Download for Android (early beta)
+
+An early beta of the Android app is available as a free APK that you install directly. Android releases are separate from the Windows releases: their tags are named `android-v<version>` and they are not marked "Latest". Open **[Releases](https://github.com/lumipilot/LumiPilot/releases)** and look for `android-v…`.
+
+1. Download `LumiPilot-<version>-build<N>-android.apk` and the `.sha256` file with the same name.
+2. On a PC, open PowerShell in the download folder, replace the example name with your filename, and compare the two hashes before you copy the APK to your phone:
+   ```powershell
+   $File = 'LumiPilot-1.0.24-build123-android.apk'
+   (Get-FileHash -LiteralPath $File -Algorithm SHA256).Hash
+   Get-Content -LiteralPath "$File.sha256"
+   ```
+   The SHA-256 hashes must match. `build123` is an example, not the release's actual build number.
+3. Open the APK on your phone. Android asks you to allow installing apps from that source ("Install unknown apps"). Google Play Protect may warn that the app did not come from Google Play; do not turn Play Protect off.
+
+Requirements: Android 7.0 or later (API 24). The APK contains 64-bit ARM (phones) and x86_64 (emulators) builds.
+
+Please read before installing:
+
+- **Not from Google Play.** This APK is signed with the project's own key. If LumiPilot is later published on Google Play, that version will be signed differently and cannot update over this one: you would have to uninstall this APK first, and this GitHub build may stop receiving updates.
+- **Uninstalling can delete your data.** The app keeps its data in `/sdcard/Android/data/com.claude.claude_app/files/LumiPilot`. Back it up before you uninstall (for example with `adb pull`).
+- **Early beta.** Safety testing on physical Android devices is not finished. On devices that use 16 KB memory pages, the built-in tool-program worker may fail to start.
+
 ## User guide
 
 New to LumiPilot? Read the **[User Guide](docs/user-guide.md)** for setup, conversations, approvals, settings, and troubleshooting.
@@ -80,11 +102,11 @@ New to LumiPilot? Read the **[User Guide](docs/user-guide.md)** for setup, conve
 ## Important notes
 
 - **Not a sandbox.** Approved commands and tools run with your user account's permissions. Do not run the app as administrator, and try risky tasks on a copy first.
-- **Your data goes where you send it.** Conversations, files and tool results are sent to the AI provider and integrations you choose. The app does not send usage statistics, conversations or crash data to the developer and does not check for updates.
+- **Your data goes where you send it.** Conversations, files and tool results are sent to the AI provider and integrations you choose. The app does not send usage statistics, conversations or crash data to the developer. It checks GitHub for new versions; you can turn this off in Settings > About.
 - **Costs.** The app is free; external AI subscriptions and APIs may cost money.
 - **AI can be wrong.** Review changes before relying on them.
 
-Data location: `%APPDATA%\LumiPilot\LumiPilot`
+Data location: `%APPDATA%\LumiPilot\LumiPilot` (Windows), `/sdcard/Android/data/com.claude.claude_app/files/LumiPilot` (Android)
 
 ## Legal
 

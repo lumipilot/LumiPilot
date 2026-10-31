@@ -1,5 +1,5 @@
 LumiPilot Free Binary License
-Document version: 2026-10-29.1
+Document version: 2026-10-31.1
 Rights holder display name: LumiPilot
 Public contact: lumipilothelp@gmail.com
 Effective: from the date the release containing this document version is published. Operator: an individual developer (display name LumiPilot). Rights ownership is based on the rights holder's statement and the repository records and has not been independently verified by a third party.

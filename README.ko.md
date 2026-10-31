@@ -8,7 +8,7 @@
 
 LumiPilot은 코딩과 일상 작업을 돕는 Windows 데스크톱 AI 어시스턴트입니다. AI 프로바이더와 작업 폴더를 선택해 파일을 읽고 수정하고, 명령을 실행하고, 웹을 탐색할 수 있습니다. 도구 실행에 필요한 승인은 사용자가 정합니다.
 
-> 이 저장소는 Windows 앱을 배포합니다. 앱 소스 코드는 여기에 공개되어 있지 않습니다.
+> 이 저장소는 Windows 앱과 초기 베타 Android APK를 배포합니다. 앱 소스 코드는 여기에 공개되어 있지 않습니다.
 
 ## 화면 미리보기
 
@@ -61,6 +61,28 @@ LumiPilot은 코딩과 일상 작업을 돕는 Windows 데스크톱 AI 어시스
 
 선택 — Visual Studio 실시간 디버깅: Visual Studio를 닫고, 압축을 푼 폴더의 `extras\LumiPilotDebugBridge.vsix`를 실행한 뒤(Visual Studio 2022·2026) Visual Studio를 다시 엽니다. 확장에 서명이 없어 VSIX 설치 창이 경고할 수 있습니다. 크래시 덤프 분석은 이 확장 없이도 됩니다.
 
+## Android 다운로드 (초기 베타)
+
+Android 앱의 초기 베타를 직접 설치하는 무료 APK로 제공합니다. Android 릴리스는 Windows 릴리스와 별개이며, 태그 이름이 `android-v<버전>`이고 "Latest"로 표시되지 않습니다. **[Releases](https://github.com/lumipilot/LumiPilot/releases)** 에서 `android-v…`를 찾으세요.
+
+1. `LumiPilot-<버전>-build<N>-android.apk`와 같은 이름의 `.sha256` 파일을 받습니다.
+2. APK를 폰으로 옮기기 전에 PC의 다운로드 폴더에서 PowerShell을 열고, 예시 이름을 실제 파일명으로 바꾼 뒤 두 해시를 비교합니다.
+   ```powershell
+   $File = 'LumiPilot-1.0.24-build123-android.apk'
+   (Get-FileHash -LiteralPath $File -Algorithm SHA256).Hash
+   Get-Content -LiteralPath "$File.sha256"
+   ```
+   SHA-256 해시가 같아야 합니다. `build123`은 예시이며 실제 빌드 번호가 아닙니다.
+3. 폰에서 APK를 엽니다. Android가 해당 출처의 앱 설치를 허용하라고 묻습니다("알 수 없는 앱 설치"). 앱이 Google Play에서 온 것이 아니라서 Google Play Protect가 경고할 수 있으며, Play Protect를 끄지는 마세요.
+
+요구 사항: Android 7.0 이상(API 24). APK에는 64비트 ARM(폰)과 x86_64(에뮬레이터)용이 들어 있습니다.
+
+설치 전에 꼭 읽어 주세요.
+
+- **Google Play 배포본이 아닙니다.** 이 APK는 프로젝트의 자체 키로 서명되어 있습니다. 나중에 LumiPilot을 Google Play에 게시하면 그 버전은 서명이 달라 이 APK 위에 업데이트로 설치할 수 없습니다. 이 APK를 먼저 제거해야 하며, 이 GitHub 배포본은 업데이트가 중단될 수 있습니다.
+- **제거하면 데이터가 지워질 수 있습니다.** 앱 데이터는 `/sdcard/Android/data/com.claude.claude_app/files/LumiPilot`에 저장됩니다. 제거하기 전에 백업하세요(예: `adb pull`).
+- **초기 베타입니다.** 실제 Android 기기에서의 안전성 시험이 끝나지 않았습니다. 16KB 메모리 페이지를 쓰는 기기에서는 내장 도구 프로그램 워커가 시작되지 않을 수 있습니다.
+
 ## 사용 설명서
 
 처음이라면 **[사용 설명서](docs/user-guide.ko.md)** 에서 설정, 대화, 승인, 설정 항목, 문제 해결을 확인하세요.
@@ -80,11 +102,11 @@ LumiPilot은 코딩과 일상 작업을 돕는 Windows 데스크톱 AI 어시스
 ## 꼭 알아 두세요
 
 - **샌드박스가 아닙니다.** 승인한 명령과 도구는 사용자 계정 권한 그대로 실행됩니다. 관리자 권한으로 실행하지 말고, 위험한 작업은 사본에서 먼저 해 보세요.
-- **데이터는 사용자가 보낸 곳으로 갑니다.** 대화·파일·도구 결과는 선택한 AI 프로바이더와 연동 서비스로 전송됩니다. 앱은 사용 통계·대화·크래시 데이터를 개발자에게 보내지 않으며 업데이트 확인도 하지 않습니다.
+- **데이터는 사용자가 보낸 곳으로 갑니다.** 대화·파일·도구 결과는 선택한 AI 프로바이더와 연동 서비스로 전송됩니다. 앱은 사용 통계·대화·크래시 데이터를 개발자에게 보내지 않습니다. 새 버전을 확인하려고 GitHub에 접속하며, 설정 > 앱 정보에서 끌 수 있습니다.
 - **비용.** 앱은 무료이지만 외부 AI 구독·API에는 비용이 들 수 있습니다.
 - **AI는 틀릴 수 있습니다.** 변경 내용을 검토한 뒤 사용하세요.
 
-데이터 위치: `%APPDATA%\LumiPilot\LumiPilot`
+데이터 위치: `%APPDATA%\LumiPilot\LumiPilot`(Windows), `/sdcard/Android/data/com.claude.claude_app/files/LumiPilot`(Android)
 
 ## 법적 고지
 
